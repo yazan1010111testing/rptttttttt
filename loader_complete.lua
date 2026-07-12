@@ -31,7 +31,7 @@ local CONFIG = {
     DISCORD_INVITE = "https://discord.gg/t9xNXQzSvs", -- Your Discord server
     
     -- Premium script location
-    PREMIUM_SCRIPT_URL = "https://raw.githubusercontent.com/yazan1010111testing/rptttttttt/refs/heads/main/premium_version.lua", -- ← UPDATE THIS AFTER GITHUB UPLOAD
+    PREMIUM_SCRIPT_URL = "https://raw.githubusercontent.com/yazan1010111testing/rptttttttt/refs/heads/main/premium_version.lua",
     
     -- Script info
     SCRIPT_NAME = "Blox Fruits Premium V2.0",
@@ -507,19 +507,19 @@ end
 -- LOAD PREMIUM SCRIPT
 -- ═══════════════════════════════════════════════════════════════
 local function LoadPremiumScript()
-    Notify("🍎 Loading", "Loading Blox Fruits Premium...", 2)
+    Notify("🍎 Loading", "Loading premium script...", 2)
+    print("[🍎 Blox Fruits] Loading from:", CONFIG.PREMIUM_SCRIPT_URL)
     
     local success, error = pcall(function()
-        -- Load from URL
         loadstring(game:HttpGet(CONFIG.PREMIUM_SCRIPT_URL))()
     end)
     
     if success then
-        Notify("✅ Success", "Premium script loaded!", 3)
-        print("[🍎 Blox Fruits] Premium script loaded successfully")
+        print("[🍎 Blox Fruits] Premium script loaded successfully!")
     else
-        Notify("❌ Error", "Failed to load premium script", 5)
-        warn("[🍎 Blox Fruits] Load error:", error)
+        Notify("❌ Error", "Failed to load script!", 5)
+        warn("[🍎 Blox Fruits] Error:", error)
+        warn("[🍎 Blox Fruits] URL:", CONFIG.PREMIUM_SCRIPT_URL)
     end
 end
 
@@ -527,6 +527,8 @@ end
 -- MAIN EXECUTION
 -- ═══════════════════════════════════════════════════════════════
 Notify("🍎 Blox Fruits", "Loading key system...", 2)
+print("[🍎 Blox Fruits] Premium script URL:", CONFIG.PREMIUM_SCRIPT_URL)
+print("[🍎 Blox Fruits] Key link:", CONFIG.FULL_LINK)
 
 -- Check for saved key first
 local savedKey = LoadKey()
