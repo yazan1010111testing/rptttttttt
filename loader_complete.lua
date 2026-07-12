@@ -455,7 +455,12 @@ local function CreateKeySystemUI(onValidated)
             ValidateBtn.Text = "✓ Success!"
             ValidateBtn.BackgroundColor3 = Color3.fromRGB(50, 255, 100)
             
-            task.wait(1)
+            -- Load script IMMEDIATELY (before fade)
+            if onValidated then
+                onValidated()
+            end
+            
+            task.wait(0.5)
             
             -- Fade out animation
             TweenService:Create(Frame, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
@@ -471,11 +476,6 @@ local function CreateKeySystemUI(onValidated)
             
             task.wait(0.5)
             ScreenGui:Destroy()
-            
-            -- Call success callback
-            if onValidated then
-                onValidated()
-            end
         else
             Status.Text = message
             Status.TextColor3 = Color3.fromRGB(255, 100, 100)
