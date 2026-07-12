@@ -31,7 +31,7 @@ local CONFIG = {
     DISCORD_INVITE = "https://discord.gg/t9xNXQzSvs", -- Your Discord server
     
     -- Premium script location
-    PREMIUM_SCRIPT_URL = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/blox_fruits_premium.lua", -- ← UPDATE THIS AFTER GITHUB UPLOAD
+    PREMIUM_SCRIPT_URL = "https://raw.githubusercontent.com/yazan1010111testing/rptttttttt/refs/heads/main/premium_version.lua", -- ← UPDATE THIS AFTER GITHUB UPLOAD
     
     -- Script info
     SCRIPT_NAME = "Blox Fruits Premium V2.0",
